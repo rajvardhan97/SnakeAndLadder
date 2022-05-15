@@ -10,7 +10,7 @@ namespace SnakeandLadder
     {
         public void SnakeLadder()
         {
-            int Start = 0, Option = 0;
+            int Start = 0, Option = 0, Count = 0;
             Console.Write("\n--------------------- \nSnake and Ladder Game \n"
                  + "---------------------\n" +
                  "Player is at Start position " + Start);
@@ -34,20 +34,26 @@ namespace SnakeandLadder
                         {
                             Start -= Start - dice;
                         }
+                        Console.WriteLine("\n Position of player = " + Start);
+                        Count++;
                         break;
                     case 3:
                         Console.Write("Snake: Move down by " + dice);
                         Start -= dice;
+                        if (Start < 0)
+                        {
+                            Start = 0;
+                        }
+                        Console.WriteLine("\n Position of player = " + Start);
+                        Count++;
                         break;
                     default:
                         break;
                 }
-                if(Start < 0)
-                {
-                    Start = 0;
-                }
+               
             }
-            Console.Write("\n Player reached at the end of game");
+            Console.Write("\n You Won the Game \n " +
+                "The number of times the dice was played " + Count + "\n");
         }
     }
 }
