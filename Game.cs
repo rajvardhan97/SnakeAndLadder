@@ -30,6 +30,10 @@ namespace SnakeandLadder
                     case 2:
                         Console.Write("Ladder: Move up by " + dice);
                         Start += dice;
+                        if(Start > 100)
+                        {
+                            Start -= Start - dice;
+                        }
                         break;
                     case 3:
                         Console.Write("Snake: Move down by " + dice);
