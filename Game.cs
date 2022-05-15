@@ -14,7 +14,9 @@ namespace SnakeandLadder
             Console.Write("\n--------------------- \nSnake and Ladder Game \n"
                 + "---------------------\n" +
                 "Player is at Start position " + Start);
-            
+            Random random = new Random();
+            int dice = random.Next(1, 7);
+            Console.WriteLine("\n Player got dice number " + dice);
         }
     }
 }
